@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Repositório do Golang (front-end da aplicação).
+Repositório do Next.js (front-end da aplicação).
 
 ## Requerimentos
 
