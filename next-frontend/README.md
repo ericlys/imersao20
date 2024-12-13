@@ -2,18 +2,36 @@
 
 ## Descrição
 
-Repositório do Next.js (front-end da aplicação).
+Repositório do Golang (front-end da aplicação).
 
 ## Requerimentos
 
-Instale o Golang na sua máquina seguindo as instruções da aula ou siga este tutorial [https://go.dev/doc/install](https://go.dev/doc/install)
+É necessário integrar com Google Maps, para isso, é necessário criar uma chave de API no Google Cloud Platform. Para isso, siga os passos:
+
+1. Acesse o [Google Cloud Platform](https://cloud.google.com/).
+2. Crie um novo projeto.
+3. Ative a API do Places, Directions e Maps JavaScript do Google Maps.
+4. Guarde a chave de API gerada.
 
 ## Rodar a aplicação
 
-Rode o comando:
+Gere o arquivo `.env` através do comando:
 
 ```
-go run cmd/simulator/main.go
+cp .env.example .env
 ```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Rode o servidor:
+
+```bash
+npm run dev
+```
+
 
 
