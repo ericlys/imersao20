@@ -8,4 +8,5 @@ USER node
 
 WORKDIR /home/node/app
 
+# comando para ler algo (para manter o container rodando)
 CMD [ "tail", "-f", "/dev/null" ]
