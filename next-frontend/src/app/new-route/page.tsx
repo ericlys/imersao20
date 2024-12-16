@@ -2,18 +2,19 @@ import { MapNewRoute } from "./MapNewRoute";
 import { NewRouteForm } from "./NewRouteForm";
 
 export async function searchDirections(source: string, destination: string) {
+
   const [sourceResponse, destinationResponse] = await Promise.all([
     fetch(`http://localhost:3000/places?text=${source}`, {
-      // cache: "force-cache", //default
-      // next: {
-      //   revalidate: 1 * 60 * 60 * 24, // 1 dia
-      // }
+      cache: "force-cache", //default
+      next: {
+        revalidate: 1 * 60 * 60 * 24, // 1 dia
+      }
     }),
     fetch(`http://localhost:3000/places?text=${destination}`, {
-      // cache: "force-cache", //default
-      // next: {
-      //   revalidate: 1 * 60 * 60 * 24, // 1 dia
-      // }
+      cache: "force-cache", //default
+      next: {
+        revalidate: 1 * 60 * 60 * 24, // 1 dia
+      }
     }),
   ]);
 
@@ -39,9 +40,9 @@ export async function searchDirections(source: string, destination: string) {
     `http://localhost:3000/directions?originId=${placeSourceId}&destinationId=${placeDestinationId}`,
     {
       // cache: "force-cache", //default
-      // next: {
-      //   revalidate: 1 * 60 * 60 * 24, // 1 dia
-      // },
+      next: {
+        revalidate: 1 * 60 * 60 * 24, // 1 dia
+      },
     }
   );
 
@@ -68,6 +69,7 @@ export async function NewRoutePage({
 
   const result =
     source && destination ? await searchDirections(source, destination) : null;
+
   let directionsData = null;
   let placeSourceId = null;
   let placeDestinationId = null;
@@ -79,8 +81,8 @@ export async function NewRoutePage({
   }
 
   return (
-    <div className="flex flex-1 w-full h-full">
-      <div className="w-1/3 p-4 h-full">
+    <div className="flex flex-1 w-full h-full flex-col md:flex-row">
+      <div className="w-full md:w-1/3 p-4 md:h-full mb-5 md:mb-0">
         <h4 className="text-3xl text-contrast mb-2">Nova rota</h4>
         <form className="flex flex-col space-y-4" method="get">
           <div className="relative">
@@ -117,7 +119,7 @@ export async function NewRoutePage({
           </div>
           <button
             type="submit"
-            className="bg-main text-primary p-2 rounded text-xl font-bold"
+            className="bg-main text-contrast p-2 rounded text-xl font-bold"
           >
             Pesquisar
           </button>
@@ -159,7 +161,7 @@ export async function NewRoutePage({
               )}
               <button
                 type="submit"
-                className="bg-main text-primary font-bold p-2 rounded mt-4"
+                className="bg-main text-contrast font-bold p-2 rounded mt-4"
               >
                 Adicionar rota
               </button>
@@ -173,3 +175,5 @@ export async function NewRoutePage({
 }
 
 export default NewRoutePage;
+
+//server action - endpoint do lado do servidor para criar uma rota

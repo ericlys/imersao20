@@ -336,6 +336,23 @@ const colors = [
   "#880e4f",
   "#01579b",
   "#263238",
+  "#e57373", 
+  "#ba68c8", 
+  "#81c784", 
+  "#ffb74d", 
+  "#64b5f6", 
+  "#f06292", 
+  "#ffe082", 
+  "#a1887f", 
+  "#4fc3f7", 
+  "#dce775", 
+  "#ce93d8", 
+  "#7986cb", 
+  "#4db6ac",  
+  "#a5d6a7", 
+  "#f8bbd0", 
+  "#b3e5fc",  
+  "#cfd8dc", 
 ];
 
 function convertDirectionsResponseToDirectionsResult(
