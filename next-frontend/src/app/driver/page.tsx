@@ -15,8 +15,8 @@ export async function getRoutes() {
 export async function DriverPage() {
   const routes = await getRoutes();
   return (
-    <div className="flex flex-1 w-full h-full">
-      <div className="w-1/3 p-2 h-full">
+    <div className="flex flex-col md:flex-row flex-1 w-full h-full">
+      <div className="w-full md:w-1/3 p-2 h-auto md:h-full mb-5 md:mb-0">
         <h4 className="text-3xl text-contrast mb-2">Inicie uma rota</h4>
         <div className="flex flex-col">
           <form className="flex flex-col space-y-4">

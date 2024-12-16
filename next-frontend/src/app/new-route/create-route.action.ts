@@ -9,10 +9,10 @@ export async function createRouteAction(state: any, formData: FormData) {
   const directionsResponse = await fetch(
     `http://localhost:3000/directions?originId=${sourceId}&destinationId=${destinationId}`,
     {
-      // cache: "force-cache", //default
-      // next: {
-      //   revalidate: 1 * 60 * 60 * 24, // 1 dia
-      // }
+      cache: "force-cache", //default
+      next: {
+        revalidate: 1 * 60 * 60 * 24, // 1 dia
+      }
     }
   );
 
